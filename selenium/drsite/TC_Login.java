@@ -62,7 +62,7 @@ public class TC_Login {
 		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("tien.tra@codecomplete.jp");
 		driver.findElement(By.xpath("//input[@type='password']")).clear();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Tien12345");
+		driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Tien1234");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		
@@ -78,7 +78,7 @@ public class TC_Login {
 		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("tien.tracodecomplete.jp");
 		driver.findElement(By.xpath("//input[@type='password']")).clear();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Tien12345");
+		driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Tien1234");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 	
@@ -133,6 +133,7 @@ public class TC_Login {
 	
 	@Test
 	public void TC_08() throws InterruptedException {
+		driver.manage().deleteAllCookies();
 		driver.findElement(By.xpath("//span[contains(text(),'ログアウト')]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//p[contains(text(), 'OK')]")).click();
