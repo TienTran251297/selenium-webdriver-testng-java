@@ -25,8 +25,6 @@ public class TC_Login {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 //		driver.manage().window().maximize();
 		driver.get("https://web-dr.staging.kod-hc.info/");
-		
-		
 	}
 
 
@@ -44,8 +42,8 @@ public class TC_Login {
 	
 	@Test
 	public void TC_02() throws InterruptedException {
+		
 		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("tien.tran+4@codecomplete.jp");
-		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@type='password']")).sendKeys("tien1234");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -58,10 +56,8 @@ public class TC_Login {
 	public void TC_03() throws InterruptedException {
 		
 		driver.findElement(By.xpath("//input[@type='text']")).clear();
-		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("tien.tra@codecomplete.jp");
 		driver.findElement(By.xpath("//input[@type='password']")).clear();
-		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Tien1234");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -72,12 +68,10 @@ public class TC_Login {
 	@Test
 	
 	public void TC_04() throws InterruptedException {
-
+		
 		driver.findElement(By.xpath("//input[@type='text']")).clear();
-		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("tien.tracodecomplete.jp");
 		driver.findElement(By.xpath("//input[@type='password']")).clear();
-		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Tien1234");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -88,27 +82,22 @@ public class TC_Login {
 	
 	@Test
 	public void TC_05() throws InterruptedException {
-		Thread.sleep(1000);
+		
 		driver.findElement(By.xpath("//input[@type='text']")).clear();
-		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("test");
+		driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Tien1234");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
 		//Verify
-		Assert.assertEquals(driver.findElement(By.xpath("//p[contains(text(),'メールアドレスの形式が違います。')]")).getText(), "メールアドレスの形式が違います。");
-		Assert.assertEquals(driver.findElement(By.xpath("//p[contains(text(),'メールアドレスまたはパスワードが正しくありません。(コード: 404 )')]")).getText(), "メールアドレスまたはパスワードが正しくありません。(コード: 404 )");
+		Assert.assertEquals(driver.findElement(By.xpath("//p[contains(text(),'ID / メールアドレスを入力してください')]")).getText(), "ID / メールアドレスを入力してください");
 		}
 	
 	@Test
 	public void TC_06() throws InterruptedException {
 		
-		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@type='text']")).clear();
-		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("tien.tran+4@codecomplete.jp");
-		Thread.sleep(10000);
 		driver.findElement(By.xpath("//input[@type='password']")).clear();
-		
 		Thread.sleep(10000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		
@@ -118,11 +107,10 @@ public class TC_Login {
 	
 	@Test
 	public void TC_07() throws InterruptedException {
+		driver.navigate().refresh();
 		driver.findElement(By.xpath("//input[@type='text']")).clear();
-		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("tien.tran+4@codecomplete.jp");
 		driver.findElement(By.xpath("//input[@type='password']")).clear();
-		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Tien1234");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -133,16 +121,14 @@ public class TC_Login {
 	
 	@Test
 	public void TC_08() throws InterruptedException {
-		driver.manage().deleteAllCookies();
+		driver.navigate().refresh();
 		driver.findElement(By.xpath("//span[contains(text(),'ログアウト')]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//p[contains(text(), 'OK')]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@type='text']")).clear();
-		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("tien.tran+5@codecomplete.jp");
 		driver.findElement(By.xpath("//input[@type='password']")).clear();
-		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@type='password']")).sendKeys("YFSwmQffY1");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
