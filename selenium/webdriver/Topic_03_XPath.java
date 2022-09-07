@@ -2,15 +2,15 @@ package webdriver;
 
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
+//import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.Assert;
+//import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_03_XPath_Part_1 {
+public class Topic_03_XPath {
 	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
 
@@ -67,11 +67,12 @@ public class Topic_03_XPath_Part_1 {
 		//div[@class='footer']//a[@title='My Account']
 
 		//li[@class='error-msg']//span
-	
+		
+		
 		//Xpath cos constains/starts-with nhưng k có ends-with
-		//CSs lại có ends-with
-		//https://member.lazada.vn/user/register?spm=a2o4n.home.header.d6.1905e182p9UVwN
-		//input[starts-with(@data-spm-anchor-id,'a2o4n.login_signup.0.i0.473e5d0aWVevc0')]
+				//CSs lại có ends-with
+				//https://member.lazada.vn/user/register?spm=a2o4n.home.header.d6.1905e182p9UVwN
+				//input[starts-with(@data-spm-anchor-id,'a2o4n.login_signup.0.i0.473e5d0aWVevc0')]
 		
 	}
 

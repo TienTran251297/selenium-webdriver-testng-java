@@ -2,6 +2,7 @@ package webdriver;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -9,7 +10,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_00_Template {
+public class Topic_05_Web_Browser_BT_Elenment {
 	WebDriver driver;
 	WebElement element;
 	String projectPath = System.getProperty("user.dir");
@@ -23,8 +24,18 @@ public class Topic_00_Template {
 	}
 
 	@Test
-	public void TC_01_ValidateCurrentUrl() {
-		driver.get("https://www.facebook.com/");
+	public void TC_01_isDisplayed() {
+		driver.get("https://automationfc.github.io/basic-form/index.html");
+		
+		//Email Textbox
+		WebElement emailTextbox = driver.findElement(By.cssSelector("input#email"));
+		
+		if (emailTextbox.isDisplayed()) {
+			emailTextbox.sendKeys("Automation Testing");
+			System.out.println("Email textbox is displayed");
+		}else {
+			System.out.println("Email textbox is not displayed");
+		}
 	}
 
 	@Test
