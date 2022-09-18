@@ -1,5 +1,6 @@
 package webdriver;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -15,6 +16,18 @@ public class Topic_04_Run_On_Browser {
 		driver = new FirefoxDriver();
 		driver.get("https://www.facebook.com/");
 		driver.quit();
+		
+//		"//label[text()='Employee Id']/parent::div/following-sibling::div/input"
+//		Ancestor (Tổ tiên)
+//		parent (cha)
+//		preceding (bác)
+//		follwing (Chú)
+//		preceding-sibling (anh của node hiện tại)
+//		follwing-sibling (em của node hiện tại)
+//		child (con)
+//		descendant (cháu của node hiện tại)
+//			
+
 	}
 
 	@Test

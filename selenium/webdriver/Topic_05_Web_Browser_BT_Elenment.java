@@ -28,7 +28,7 @@ public class Topic_05_Web_Browser_BT_Elenment {
 		driver.get("https://automationfc.github.io/basic-form/index.html");
 		
 		//Email Textbox
-		WebElement emailTextbox = driver.findElement(By.cssSelector("input#email"));
+		WebElement emailTextbox = driver.findElement(By.cssSelector("input#mail"));
 		
 		if (emailTextbox.isDisplayed()) {
 			emailTextbox.sendKeys("Automation Testing");
@@ -36,15 +36,50 @@ public class Topic_05_Web_Browser_BT_Elenment {
 		}else {
 			System.out.println("Email textbox is not displayed");
 		}
+		
+		WebElement ageSelectBox = driver.findElement(By.xpath("//input[@id='under_18']"));
+		
+		if (ageSelectBox.isDisplayed()) {
+			System.out.println("Age select box is displayed");
+			ageSelectBox.click();
+		} else {
+			System.out.println("Age select box is not displayed");
+		}
+		
+		WebElement educationTextBox = driver.findElement(By.xpath("//textarea[@id='edu']"));
+		
+		if (educationTextBox.isDisplayed()) {
+			System.out.println("Education is displayed");
+			educationTextBox.sendKeys("Automation Testing");
+		} else {
+			System.out.println("Education is not displayed");
+		}
+		
 	}
 
 	@Test
-	public void TC_02_ValidatePageTitle() {
+	public void TC_02_isEnabled() {
+		driver.get("https://automationfc.github.io/basic-form/index.html");
+		WebElement emailTextbox = driver.findElement(By.cssSelector("input#mail"));
 		
+		if (emailTextbox.isEnabled()) {
+			System.out.println("Email textbox is enabled");
+		}else {
+			System.out.println("Email textbox is not disabled");
+		}
+		
+		WebElement ageSelectBox = driver.findElement(By.xpath("//input[@id='under_18']"));
+		
+		if (ageSelectBox.isDisplayed()) {
+			System.out.println("Age select box is enabled");
+			ageSelectBox.click();
+		} else {
+			System.out.println("Age select box is not disable");
+		}
 	}
 
 	@AfterClass
 	public void afterClass() {
-		driver.quit();
+//		driver.quit();
 	}
 }
