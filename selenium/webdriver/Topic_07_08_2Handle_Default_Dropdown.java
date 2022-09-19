@@ -1,5 +1,7 @@
 package webdriver;
 
+import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -95,6 +97,26 @@ public class Topic_07_08_2Handle_Default_Dropdown {
 		Assert.assertEquals(driver.findElement(By.id("Email")).getAttribute("value"), emailString);
 		Assert.assertEquals(driver.findElement(By.id("Company")).getAttribute("value"), companyString);
 	
+	}
+	
+	@Test
+	public void TC_02() throws InterruptedException {
+		driver.get("https://rode.com/en/support/where-to-buy");
+		select = new Select(driver.findElement(By.id("country")));
+		
+		select.selectByValue("Vietnam");
+		
+		Thread.sleep(3000);
+		
+		Assert.assertEquals(select.getFirstSelectedOption().getText(), "Vietnam");
+		
+		List<WebElement> dealers = driver.findElements(By.cssSelector("div#map h4"));
+		
+		for (WebElement element : dealers) {
+			System.out.println(element.getText());
+		}
+		
+		
 	}
 
 	@AfterClass
