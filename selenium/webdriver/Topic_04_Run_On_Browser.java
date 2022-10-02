@@ -21,9 +21,9 @@ public class Topic_04_Run_On_Browser {
 //		Ancestor (Tổ tiên)
 //		parent (cha)
 //		preceding (bác)
-//		follwing (Chú)
+//		following (Chú)
 //		preceding-sibling (anh của node hiện tại)
-//		follwing-sibling (em của node hiện tại)
+//		following-sibling (em của node hiện tại)
 //		child (con)
 //		descendant (cháu của node hiện tại)
 //			
