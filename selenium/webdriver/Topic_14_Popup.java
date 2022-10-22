@@ -1,7 +1,9 @@
 package webdriver;
 
+import static org.testng.Assert.ARRAY_MISMATCH_TEMPLATE;
 import static org.testng.Assert.assertEquals;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -32,6 +34,7 @@ public class Topic_14_Popup {
 		
 		System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
 		driver = new ChromeDriver();
+		jsExecutor = (JavascriptExecutor) driver;
 		
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
@@ -77,7 +80,7 @@ public class Topic_14_Popup {
 		Assert.assertEquals(driver.findElement(By.xpath("//div[@id = 'password-form-login-message']")).getText(),"Sai tên đăng nhập hoặc mật khẩu");
 	}
 	
-	@Test
+//	@Test
 	public void TC_03() {
 		driver.get("https://tiki.vn/");
 		Assert.assertEquals(driver.findElements(By.xpath("//div[@role= 'dialog']")).size(),0);
@@ -96,7 +99,7 @@ public class Topic_14_Popup {
 		Assert.assertEquals(driver.findElements(By.xpath("//div[@role= 'dialog']")).size(), 0);
 	}
 	
-	@Test
+//	@Test
 	public void TC_04() {
 		driver.get("https://www.facebook.com/");
 		driver.findElement(By.xpath("//a[text() = 'Create New Account']")).click();
@@ -105,6 +108,42 @@ public class Topic_14_Popup {
 		driver.findElement(By.xpath("//div[text() = 'Sign Up']/parent::div/parent::div/img")).click();
 		sleepInSecond(1);
 		Assert.assertEquals(driver.findElements(By.xpath("//div[text() = 'Sign Up']/parent::div/parent::div")).size(),0);
+	}
+	
+//	@Test
+	public void TC_05_Random_In_DOM() {
+		driver.get("https://www.javacodegeeks.com/");
+		sleepInSecond(10);		
+		WebElement popup = driver.findElement(By.xpath("//div[@class= 'lepopup-popup-container']/div[not(contains(@style, 'display:none'))]"));		
+		if (popup.isDisplayed()) {
+			driver.findElement(By.xpath("//div//a[text() = '×']")).click();
+		} 
+	}	
+	
+//	@Test
+	public void TC_06_Random_IN_DOM_2() {
+		driver.get("https://kmplayer.com/");
+		sleepInSecond(10);
+		WebElement popup = driver.findElement(By.xpath("//div/img[@id = 'support-home']"));
+		if (popup.isDisplayed()) {
+			jsExecutor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//area[@id = 'btn-r']")));
+			sleepInSecond(1);
+			driver.findElement(By.xpath("//div/a[@class = 'mb_sp mb_btn2 support-layer']")).click();
+			sleepInSecond(1);
+		}
+	}
+	
+	@Test
+	public void TC_07_Random_NO_IN_DOM() {
+		driver.get("https://dehieu.vn/");
+		sleepInSecond(10);
+		List<WebElement> popup = driver.findElements(By.xpath("//div[@class = 'popup-content']"));
+		if (popup.size()>0 && popup.get(0).isDisplayed()) {
+			driver.findElement(By.xpath("//button[@id = 'close-popup']")).click();
+			sleepInSecond(1);
+			Assert.assertEquals(driver.findElement(By.xpath("//h2[text() = 'KHÓA HỌC NHIỀU NGƯỜI MUA NHẤT']")).getText(), "KHÓA HỌC NHIỀU NGƯỜI MUA NHẤT");
+			sleepInSecond(1);
+		}
 	}
 	
 	public void sleepInSecond(long time) {
