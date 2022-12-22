@@ -1,11 +1,7 @@
 package webdriver;
 
-import static org.testng.Assert.ARRAY_MISMATCH_TEMPLATE;
-import static org.testng.Assert.assertEquals;
-
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -32,7 +28,7 @@ public class Topic_14_Popup {
 //		System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
 //		driver = new FirefoxDriver();
 		
-		System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver2.exe");
 		driver = new ChromeDriver();
 		jsExecutor = (JavascriptExecutor) driver;
 		
