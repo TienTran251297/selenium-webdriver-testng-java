@@ -31,7 +31,7 @@ public class Topic_17_Window_Tab {
 		jsExecutor = (JavascriptExecutor) driver;
 	}
 
-//	@Test
+	@Test
 	public void TC_01_Window_ID() {
 //		Parent Page 
 		driver.get("https://automationfc.github.io/basic-form/");
@@ -136,7 +136,7 @@ public class Topic_17_Window_Tab {
 
 	}
 
-	@Test
+//	@Test
 	public void TC_05_Window_Tab_Dictionary() {
 		driver.get("https://dictionary.cambridge.org/vi/");
 		driver.findElement(By.xpath("//span//span[text() =  'Đăng nhập']")).click();

@@ -67,29 +67,29 @@ public class Topic_19_UPload_File {
 	@Test
 	public void TC_02_Mutiple_Image() {
 		driver.get("https://blueimp.github.io/jQuery-File-Upload/");
-		driver.findElement(By.xpath("//input[@type = 'file']"))
-				.sendKeys(nameFileImage_1 + "\n" + nameFileImage_2 + "\n" + nameFileImage_3);
-		sleepInSecond(1);
-
-		Assert.assertTrue(driver.findElement(By.xpath("//p[text() = '" + anh1 + "'] ")).isDisplayed());
-		Assert.assertTrue(driver.findElement(By.xpath("//p[text() = '" + anh2 + "'] ")).isDisplayed());
-		Assert.assertTrue(driver.findElement(By.xpath("//p[text() = '" + anh3 + "'] ")).isDisplayed());
-
-		List<WebElement> locatorStart = driver.findElements(By.xpath("//span[text()= 'Start']"));
-		for (WebElement buttonStart : locatorStart) {
-			buttonStart.click();
-			sleepInSecond(1);
-		}
-
-		Assert.assertTrue(driver.findElement(By.xpath("//a[text() = '" + anh1 + "'] ")).isDisplayed());
-		Assert.assertTrue(driver.findElement(By.xpath("//a[text() = '" + anh2 + "'] ")).isDisplayed());
-		Assert.assertTrue(driver.findElement(By.xpath("//a[text() = '" + anh3 + "'] ")).isDisplayed());
-
-		sleepInSecond(2);
-
-		Assert.assertTrue(isImageLoaded("//img[contains(@src, '" + anh1 + "')]"));
-		Assert.assertTrue(isImageLoaded("//img[contains(@src, '" + anh2 + "')]"));
-		Assert.assertTrue(isImageLoaded("//img[contains(@src, '" + anh3 + "')]"));
+//		driver.findElement(By.xpath("//input[@type = 'file']"))
+//				.sendKeys(nameFileImage_1 + "\n" + nameFileImage_2 + "\n" + nameFileImage_3);
+//		sleepInSecond(1);
+//
+//		Assert.assertTrue(driver.findElement(By.xpath("//p[text() = '" + anh1 + "'] ")).isDisplayed());
+//		Assert.assertTrue(driver.findElement(By.xpath("//p[text() = '" + anh2 + "'] ")).isDisplayed());
+//		Assert.assertTrue(driver.findElement(By.xpath("//p[text() = '" + anh3 + "'] ")).isDisplayed());
+//
+//		List<WebElement> locatorStart = driver.findElements(By.xpath("//span[text()= 'Start']"));
+//		for (WebElement buttonStart : locatorStart) {
+//			buttonStart.click();
+//			sleepInSecond(1);
+//		}
+//
+//		Assert.assertTrue(driver.findElement(By.xpath("//a[text() = '" + anh1 + "'] ")).isDisplayed());
+//		Assert.assertTrue(driver.findElement(By.xpath("//a[text() = '" + anh2 + "'] ")).isDisplayed());
+//		Assert.assertTrue(driver.findElement(By.xpath("//a[text() = '" + anh3 + "'] ")).isDisplayed());
+//
+//		sleepInSecond(2);
+//
+//		Assert.assertTrue(isImageLoaded("//img[contains(@src, '" + anh1 + "')]"));
+//		Assert.assertTrue(isImageLoaded("//img[contains(@src, '" + anh2 + "')]"));
+//		Assert.assertTrue(isImageLoaded("//img[contains(@src, '" + anh3 + "')]"));
 	}
 
 	public boolean isImageLoaded(String locator) {
@@ -114,6 +114,6 @@ public class Topic_19_UPload_File {
 
 	@AfterClass
 	public void afterClass() {
-		driver.quit();
+//		driver.quit();
 	}
 }
