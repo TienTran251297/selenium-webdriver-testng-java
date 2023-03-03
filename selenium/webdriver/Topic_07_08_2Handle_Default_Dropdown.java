@@ -98,7 +98,7 @@ public class Topic_07_08_2Handle_Default_Dropdown {
 	
 	}
 	
-	@Test
+//	@Test
 	public void TC_02() throws InterruptedException {
 		driver.get("https://rode.com/en/support/where-to-buy");
 		select = new Select(driver.findElement(By.id("country")));

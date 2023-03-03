@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+	<test name="Test">
+		<groups>
+			<run>
+				<include name="Product"></include>
+			</run>
+		</groups>
+
+		<packages>
+			<package name="tiki.admin" />
+		</packages>
+
+
+		<!--<classes>
+			 <class name = "tiki.admin.Shopper_01_Manage_Product"/>
+			<class name = "tiki.admin.Shopper_02_Manage_Cart"/>
+			<class name = "tiki.user.User_01_Checkout"/>
+			<class name = "tiki.user.User_02_Order"/>
+		</classes>-->
+
+		<!--
+		<classes>
+			<class name="testng.Topic_01_Anototations" />
+			<methods>
+				 
+				<include name="TC_01" />
+				<exclude name="TC_02" />
+			</methods>
+		</classes>
+		-->
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

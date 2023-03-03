@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="tests" name="Suite" thread-count = "2">
+	<parameter name="evironment" value="live" />
+
+	<test name="Run on FireFox">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="testng.Topic_05_Paramater_Browser" />
+		</classes>
+	</test>
+
+	<test name="Run on Chrome">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="testng.Topic_05_Paramater_Browser" />
+		</classes>
+	</test>
+
+</suite> <!-- Suite -->

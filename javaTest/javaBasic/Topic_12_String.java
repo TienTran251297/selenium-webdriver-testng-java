@@ -1,11 +1,5 @@
 package javaBasic;
 
-import java.security.PublicKey;
-import java.util.Iterator;
-
-import org.seleniumhq.jetty9.server.handler.ContextHandler.StaticContext;
-
-import bsh.servlet.BshServlet;
 
 public class Topic_12_String {
 

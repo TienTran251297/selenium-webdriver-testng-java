@@ -1,7 +1,6 @@
 package javaBasic;
 
 import java.util.Scanner;
-import java.util.Stack;
 
 import org.testng.annotations.Test;
 
